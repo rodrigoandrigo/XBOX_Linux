@@ -10,11 +10,132 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <controls:WebView2 
-         x:Name="Terminal"
-         HorizontalAlignment="Stretch" 
-         VerticalAlignment="Stretch"
-         NavigationStarting="Terminal_NavigationStarting"
-         NavigationCompleted="Terminal_NavigationCompleted"/>
+		<RelativePanel>
+			<Border
+                Margin="1"
+                BorderBrush="LightSeaGreen"
+                BorderThickness="1"
+                RelativePanel.Above="StackPanel1"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.AlignTopWithPanel="True">
+				<controls:WebView2
+                    x:Name="Terminal"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    NavigationStarting="Terminal_NavigationStarting"
+                    NavigationCompleted="Terminal_NavigationCompleted"
+                    RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignRightWithPanel="True"
+                    RelativePanel.AlignTopWithPanel="True"/>
+			</Border>
+			<StackPanel
+                x:Name="StackPanel1"
+                Orientation="Vertical"
+                Margin="1"
+                RelativePanel.AlignBottomWithPanel="True"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True">
+				<StackPanel x:Name="VirtualKeyboard1" Orientation="Horizontal" Margin="1">
+					<Button x:Name="ButtonEscape" Content="Escape" Click="AllButtons_Click" Tag="Escape" Width="65" Height="30" />
+					<Button x:Name="ButtonF1" Content="F1" Click="AllButtons_Click" Tag="F1" Width="35" Height="30" />
+					<Button x:Name="ButtonF2" Content="F2" Click="AllButtons_Click" Tag="F2" Width="35" Height="30" />
+					<Button x:Name="ButtonF3" Content="F3" Click="AllButtons_Click" Tag="F3" Width="35" Height="30" />
+					<Button x:Name="ButtonF4" Content="F4" Click="AllButtons_Click" Tag="F4" Width="35" Height="30" />
+					<Button x:Name="ButtonF5" Content="F5" Click="AllButtons_Click" Tag="F5" Width="35" Height="30" />
+					<Button x:Name="ButtonF6" Content="F6" Click="AllButtons_Click" Tag="F6" Width="35" Height="30" />
+					<Button x:Name="ButtonF7" Content="F7" Click="AllButtons_Click" Tag="F7" Width="35" Height="30" />
+					<Button x:Name="ButtonF8" Content="F8" Click="AllButtons_Click" Tag="F8" Width="35" Height="30" />
+					<Button x:Name="ButtonF9" Content="F9" Click="AllButtons_Click" Tag="F9" Width="35" Height="30" />
+					<Button x:Name="ButtonF10" Content="F10" Click="AllButtons_Click" Tag="F10" Width="45" Height="30" />
+					<Button x:Name="ButtonF11" Content="F11" Click="AllButtons_Click" Tag="F11" Width="45" Height="30" />
+					<Button x:Name="ButtonF12" Content="F12" Click="AllButtons_Click" Tag="F12" Width="45" Height="30" />
+					<Button x:Name="ButtonK21" Content="K2" Click="ButtonK2_Click"  Tag="K2" Width="40" Height="30" />
+					<Button x:Name="ButtonK31" Content="K3" Click="ButtonK3_Click"  Tag="K3" Width="40" Height="30" />
+					<Button x:Name="ButtonK41" Content="K4" Click="ButtonK4_Click"  Tag="K4" Width="40" Height="30" />
+					<Button x:Name="ButtonK51" Content="K5" Click="ButtonK5_Click"  Tag="K5" Width="40" Height="30" />
+				</StackPanel>
+				<StackPanel x:Name="VirtualKeyboard2" Orientation="Horizontal" Margin="1">
+					<Button x:Name="ButtonAC" Content="Accent" Click="AllButtons_Click" Tag="Accent" Width="70" Height="30" />
+					<Button x:Name="Button1" Content="1" Click="AllButtons_Click" Tag="1" Width="35" Height="30" />
+					<Button x:Name="Button2" Content="2" Click="AllButtons_Click" Tag="2" Width="35" Height="30" />
+					<Button x:Name="Button3" Content="3" Click="AllButtons_Click" Tag="3" Width="35" Height="30" />
+					<Button x:Name="Button4" Content="4" Click="AllButtons_Click" Tag="4" Width="35" Height="30" />
+					<Button x:Name="Button5" Content="5" Click="AllButtons_Click" Tag="5" Width="35" Height="30" />
+					<Button x:Name="Button6" Content="6" Click="AllButtons_Click" Tag="6" Width="35" Height="30" />
+					<Button x:Name="Button7" Content="7" Click="AllButtons_Click" Tag="7" Width="35" Height="30" />
+					<Button x:Name="Button8" Content="8" Click="AllButtons_Click" Tag="8" Width="35" Height="30" />
+					<Button x:Name="Button9" Content="9" Click="AllButtons_Click" Tag="9" Width="35" Height="30" />
+					<Button x:Name="Button0" Content="0" Click="AllButtons_Click" Tag="0" Width="35" Height="30" />
+					<Button x:Name="ButtonBar3" Content="Bar3" Click="AllButtons_Click" Tag="Bar3" Width="50" Height="30" />
+					<Button x:Name="ButtonMo" Content="Add1" Click="AllButtons_Click" Tag="Add1" Width="55" Height="30" />
+					<Button x:Name="ButtonBackspace" Content="Backspace" Click="AllButtons_Click" Tag="Backspace" Width="95" Height="30" />
+					<Button x:Name="ButtonK12" Content="K1" Click="ButtonK1_Click"  Tag="K1" Width="40" Height="30" />
+					<Button x:Name="ButtonK32" Content="K3" Click="ButtonK3_Click"  Tag="K3" Width="40" Height="30" />
+					<Button x:Name="ButtonK42" Content="K4" Click="ButtonK4_Click"  Tag="K4" Width="40" Height="30" />
+					<Button x:Name="ButtonK52" Content="K5" Click="ButtonK5_Click"  Tag="K5" Width="40" Height="30" />
+				</StackPanel>
+				<StackPanel x:Name="VirtualKeyboard3" Orientation="Horizontal" Margin="1">
+					<Button x:Name="ButtonTAB" Content="TAB" Click="AllButtons_Click" Tag="TAB" Width="45" Height="30" />
+					<Button x:Name="ButtonQ" Content="Q" Click="AllButtons_Click" Tag="Q" Width="35" Height="30" />
+					<Button x:Name="ButtonW" Content="W" Click="AllButtons_Click" Tag="W" Width="35" Height="30" />
+					<Button x:Name="ButtonE" Content="E" Click="AllButtons_Click" Tag="E" Width="35" Height="30" />
+					<Button x:Name="ButtonR" Content="R" Click="AllButtons_Click" Tag="R" Width="35" Height="30" />
+					<Button x:Name="ButtonT" Content="T" Click="AllButtons_Click" Tag="T" Width="35" Height="30" />
+					<Button x:Name="ButtonY" Content="Y" Click="AllButtons_Click" Tag="Y" Width="35" Height="30" />
+					<Button x:Name="ButtonU" Content="U" Click="AllButtons_Click" Tag="U" Width="35" Height="30" />
+					<Button x:Name="ButtonI" Content="I" Click="AllButtons_Click" Tag="I" Width="35" Height="30" />
+					<Button x:Name="ButtonO" Content="O" Click="AllButtons_Click" Tag="O" Width="35" Height="30" />
+					<Button x:Name="ButtonP" Content="P" Click="AllButtons_Click" Tag="P" Width="35" Height="30" />
+					<Button x:Name="ButtonKey1" Content="Key1" Click="AllButtons_Click" Tag="Key1" Width="50" Height="30" />
+					<Button x:Name="ButtonKey2" Content="Key2" Click="AllButtons_Click" Tag="Key2" Width="50" Height="30" />
+					<Button x:Name="ButtonBar2" Content="Bar2" Click="AllButtons_Click" Tag="Bar2" Width="50" Height="30" />
+					<Button x:Name="ButtonEnter" Content="Enter" Click="AllButtons_Click" Tag="Enter" Width="60" Height="30" />
+					<Button x:Name="ButtonDel" Content="Del" Click="AllButtons_Click" Tag="Del" Width="45" Height="30" />
+					<Button x:Name="ButtonK13" Content="K1" Click="ButtonK1_Click"  Tag="K1" Width="40" Height="30" />
+					<Button x:Name="ButtonK23" Content="K2" Click="ButtonK2_Click"  Tag="K2" Width="40" Height="30" />
+					<Button x:Name="ButtonK43" Content="K4" Click="ButtonK4_Click"  Tag="K4" Width="40" Height="30" />
+					<Button x:Name="ButtonK53" Content="K5" Click="ButtonK5_Click"  Tag="K5" Width="40" Height="30" />
+				</StackPanel>
+				<StackPanel x:Name="VirtualKeyboard4" Orientation="Horizontal" Margin="1">
+					<Button x:Name="ButtonCapital" Content="Capital" Click="AllButtons_Click" Tag="Capital" Width="65" Height="30" />
+					<Button x:Name="ButtonA" Content="A" Click="AllButtons_Click" Tag="A" Width="35" Height="30" />
+					<Button x:Name="ButtonS" Content="S" Click="AllButtons_Click" Tag="S" Width="35" Height="30" />
+					<Button x:Name="ButtonD" Content="D" Click="AllButtons_Click" Tag="D" Width="35" Height="30" />
+					<Button x:Name="ButtonF" Content="F" Click="AllButtons_Click" Tag="F" Width="35" Height="30" />
+					<Button x:Name="ButtonG" Content="G" Click="AllButtons_Click" Tag="G" Width="35" Height="30" />
+					<Button x:Name="ButtonH" Content="H" Click="AllButtons_Click" Tag="H" Width="35" Height="30" />
+					<Button x:Name="ButtonJ" Content="J" Click="AllButtons_Click" Tag="J" Width="35" Height="30" />
+					<Button x:Name="ButtonK" Content="K" Click="AllButtons_Click" Tag="K" Width="35" Height="30" />
+					<Button x:Name="ButtonL" Content="L" Click="AllButtons_Click" Tag="L" Width="35" Height="30" />
+					<Button x:Name="ButtonSemiPoint" Content="SemiPoint" Click="AllButtons_Click" Tag="SemiPoint" Width="85" Height="30" />
+					<Button x:Name="ButtonApostrophe" Content="Apostrophe" Click="AllButtons_Click" Tag="Apostrophe" Width="110" Height="30" />
+					<Button x:Name="ButtonK14" Content="K1" Click="ButtonK1_Click"  Tag="K1" Width="40" Height="30" />
+					<Button x:Name="ButtonK24" Content="K2" Click="ButtonK2_Click"  Tag="K2" Width="40" Height="30" />
+					<Button x:Name="ButtonK34" Content="K3" Click="ButtonK3_Click"  Tag="K3" Width="40" Height="30" />
+					<Button x:Name="ButtonK54" Content="K5" Click="ButtonK5_Click"  Tag="K5" Width="40" Height="30" />
+				</StackPanel>
+				<StackPanel x:Name="VirtualKeyboard5" Orientation="Horizontal" Margin="1">
+					<Button x:Name="ButtonZ" Content="Z" Click="AllButtons_Click" Tag="Z" Width="35" Height="30" />
+					<Button x:Name="ButtonX" Content="X" Click="AllButtons_Click" Tag="X" Width="35" Height="30" />
+					<Button x:Name="ButtonC" Content="C" Click="AllButtons_Click" Tag="C" Width="35" Height="30" />
+					<Button x:Name="ButtonV" Content="V" Click="AllButtons_Click" Tag="V" Width="35" Height="30" />
+					<Button x:Name="ButtonB" Content="B" Click="AllButtons_Click" Tag="B" Width="35" Height="30" />
+					<Button x:Name="ButtonM" Content="M" Click="AllButtons_Click" Tag="M" Width="35" Height="30" />
+					<Button x:Name="ButtonN" Content="N" Click="AllButtons_Click" Tag="N" Width="35" Height="30" />
+					<Button x:Name="ButtonPoint" Content="Point" Click="AllButtons_Click" Tag="Point" Width="60" Height="30" />
+					<Button x:Name="ButtonBar1" Content="Bar1" Click="AllButtons_Click" Tag="Bar1" Width="50" Height="30" />
+					<Button x:Name="ButtonSpace" Content="Space" Click="AllButtons_Click" Tag="Space" Width="60" Height="30" />
+					<Button x:Name="ButtonArrowLeft" Content="←" Click="AllButtons_Click" Tag="←" Width="40" Height="30" />
+					<Button x:Name="ButtonArrowUp" Content="↑" Click="AllButtons_Click" Tag="↑" Width="40" Height="30" />
+					<Button x:Name="ButtonArrowRight" Content="→" Click="AllButtons_Click" Tag="→" Width="40" Height="30"/>
+					<Button x:Name="ButtonArrowDown" Content="↓" Click="AllButtons_Click" Tag="↓" Width="40" Height="30" />
+					<Button x:Name="ButtonK15" Content="K1" Click="ButtonK1_Click"  Tag="K1" Width="40" Height="30" />
+					<Button x:Name="ButtonK25" Content="K2" Click="ButtonK2_Click"  Tag="K2" Width="40" Height="30" />
+					<Button x:Name="ButtonK35" Content="K3" Click="ButtonK3_Click"  Tag="K3" Width="40" Height="30" />
+					<Button x:Name="ButtonK45" Content="K4" Click="ButtonK4_Click"  Tag="K4" Width="40" Height="30" />
+				</StackPanel>
+			</StackPanel>
+		</RelativePanel>
     </Grid>
 </Page>
