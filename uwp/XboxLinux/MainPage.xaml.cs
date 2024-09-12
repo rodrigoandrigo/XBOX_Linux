@@ -144,7 +144,7 @@ namespace Xbox_Linux
                     string script = $@"
                         var code = {scanCode};
                         console.log('sending keys ' + code);
-                        emulator.keyboard_send_scancodes(code);
+                        emulator.keyboard_send_scancodes([0xF0].concat(code));
                     ";
                     await Terminal.CoreWebView2.ExecuteScriptAsync(script);
                 }

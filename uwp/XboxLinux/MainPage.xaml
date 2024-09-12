@@ -38,15 +38,15 @@
                 RelativePanel.AlignRightWithPanel="True">
 				<StackPanel x:Name="VirtualKeyboard1" Orientation="Horizontal" Margin="1">
 					<Button x:Name="ButtonEscape" Content="Escape" Click="AllButtons_Click" Tag="Escape" Width="65" Height="30" />
-					<Button x:Name="ButtonF1" Content="F1" Click="AllButtons_Click" Tag="F1" Width="35" Height="30" />
-					<Button x:Name="ButtonF2" Content="F2" Click="AllButtons_Click" Tag="F2" Width="35" Height="30" />
-					<Button x:Name="ButtonF3" Content="F3" Click="AllButtons_Click" Tag="F3" Width="35" Height="30" />
-					<Button x:Name="ButtonF4" Content="F4" Click="AllButtons_Click" Tag="F4" Width="35" Height="30" />
-					<Button x:Name="ButtonF5" Content="F5" Click="AllButtons_Click" Tag="F5" Width="35" Height="30" />
-					<Button x:Name="ButtonF6" Content="F6" Click="AllButtons_Click" Tag="F6" Width="35" Height="30" />
-					<Button x:Name="ButtonF7" Content="F7" Click="AllButtons_Click" Tag="F7" Width="35" Height="30" />
-					<Button x:Name="ButtonF8" Content="F8" Click="AllButtons_Click" Tag="F8" Width="35" Height="30" />
-					<Button x:Name="ButtonF9" Content="F9" Click="AllButtons_Click" Tag="F9" Width="35" Height="30" />
+					<Button x:Name="ButtonF1" Content="F1" Click="AllButtons_Click" Tag="F1" Width="40" Height="30" />
+					<Button x:Name="ButtonF2" Content="F2" Click="AllButtons_Click" Tag="F2" Width="40" Height="30" />
+					<Button x:Name="ButtonF3" Content="F3" Click="AllButtons_Click" Tag="F3" Width="40" Height="30" />
+					<Button x:Name="ButtonF4" Content="F4" Click="AllButtons_Click" Tag="F4" Width="40" Height="30" />
+					<Button x:Name="ButtonF5" Content="F5" Click="AllButtons_Click" Tag="F5" Width="40" Height="30" />
+					<Button x:Name="ButtonF6" Content="F6" Click="AllButtons_Click" Tag="F6" Width="40" Height="30" />
+					<Button x:Name="ButtonF7" Content="F7" Click="AllButtons_Click" Tag="F7" Width="40" Height="30" />
+					<Button x:Name="ButtonF8" Content="F8" Click="AllButtons_Click" Tag="F8" Width="40" Height="30" />
+					<Button x:Name="ButtonF9" Content="F9" Click="AllButtons_Click" Tag="F9" Width="40" Height="30" />
 					<Button x:Name="ButtonF10" Content="F10" Click="AllButtons_Click" Tag="F10" Width="45" Height="30" />
 					<Button x:Name="ButtonF11" Content="F11" Click="AllButtons_Click" Tag="F11" Width="45" Height="30" />
 					<Button x:Name="ButtonF12" Content="F12" Click="AllButtons_Click" Tag="F12" Width="45" Height="30" />
@@ -67,7 +67,7 @@
 					<Button x:Name="Button8" Content="8" Click="AllButtons_Click" Tag="8" Width="35" Height="30" />
 					<Button x:Name="Button9" Content="9" Click="AllButtons_Click" Tag="9" Width="35" Height="30" />
 					<Button x:Name="Button0" Content="0" Click="AllButtons_Click" Tag="0" Width="35" Height="30" />
-					<Button x:Name="ButtonBar3" Content="Bar3" Click="AllButtons_Click" Tag="Bar3" Width="50" Height="30" />
+					<Button x:Name="ButtonBar3" Content="Bar3" Click="AllButtons_Click" Tag="Bar3" Width="55" Height="30" />
 					<Button x:Name="ButtonMo" Content="Add1" Click="AllButtons_Click" Tag="Add1" Width="55" Height="30" />
 					<Button x:Name="ButtonBackspace" Content="Backspace" Click="AllButtons_Click" Tag="Backspace" Width="95" Height="30" />
 					<Button x:Name="ButtonK12" Content="K1" Click="ButtonK1_Click"  Tag="K1" Width="40" Height="30" />
@@ -76,7 +76,7 @@
 					<Button x:Name="ButtonK52" Content="K5" Click="ButtonK5_Click"  Tag="K5" Width="40" Height="30" />
 				</StackPanel>
 				<StackPanel x:Name="VirtualKeyboard3" Orientation="Horizontal" Margin="1">
-					<Button x:Name="ButtonTAB" Content="TAB" Click="AllButtons_Click" Tag="TAB" Width="45" Height="30" />
+					<Button x:Name="ButtonTAB" Content="TAB" Click="AllButtons_Click" Tag="TAB" Width="50" Height="30" />
 					<Button x:Name="ButtonQ" Content="Q" Click="AllButtons_Click" Tag="Q" Width="35" Height="30" />
 					<Button x:Name="ButtonW" Content="W" Click="AllButtons_Click" Tag="W" Width="35" Height="30" />
 					<Button x:Name="ButtonE" Content="E" Click="AllButtons_Click" Tag="E" Width="35" Height="30" />
@@ -87,9 +87,9 @@
 					<Button x:Name="ButtonI" Content="I" Click="AllButtons_Click" Tag="I" Width="35" Height="30" />
 					<Button x:Name="ButtonO" Content="O" Click="AllButtons_Click" Tag="O" Width="35" Height="30" />
 					<Button x:Name="ButtonP" Content="P" Click="AllButtons_Click" Tag="P" Width="35" Height="30" />
-					<Button x:Name="ButtonKey1" Content="Key1" Click="AllButtons_Click" Tag="Key1" Width="50" Height="30" />
-					<Button x:Name="ButtonKey2" Content="Key2" Click="AllButtons_Click" Tag="Key2" Width="50" Height="30" />
-					<Button x:Name="ButtonBar2" Content="Bar2" Click="AllButtons_Click" Tag="Bar2" Width="50" Height="30" />
+					<Button x:Name="ButtonKey1" Content="Key1" Click="AllButtons_Click" Tag="Key1" Width="55" Height="30" />
+					<Button x:Name="ButtonKey2" Content="Key2" Click="AllButtons_Click" Tag="Key2" Width="55" Height="30" />
+					<Button x:Name="ButtonBar2" Content="Bar2" Click="AllButtons_Click" Tag="Bar2" Width="55" Height="30" />
 					<Button x:Name="ButtonEnter" Content="Enter" Click="AllButtons_Click" Tag="Enter" Width="60" Height="30" />
 					<Button x:Name="ButtonDel" Content="Del" Click="AllButtons_Click" Tag="Del" Width="45" Height="30" />
 					<Button x:Name="ButtonK13" Content="K1" Click="ButtonK1_Click"  Tag="K1" Width="40" Height="30" />
@@ -98,7 +98,7 @@
 					<Button x:Name="ButtonK53" Content="K5" Click="ButtonK5_Click"  Tag="K5" Width="40" Height="30" />
 				</StackPanel>
 				<StackPanel x:Name="VirtualKeyboard4" Orientation="Horizontal" Margin="1">
-					<Button x:Name="ButtonCapital" Content="Capital" Click="AllButtons_Click" Tag="Capital" Width="65" Height="30" />
+					<Button x:Name="ButtonCapital" Content="Capital" Click="AllButtons_Click" Tag="Capital" Width="70" Height="30" />
 					<Button x:Name="ButtonA" Content="A" Click="AllButtons_Click" Tag="A" Width="35" Height="30" />
 					<Button x:Name="ButtonS" Content="S" Click="AllButtons_Click" Tag="S" Width="35" Height="30" />
 					<Button x:Name="ButtonD" Content="D" Click="AllButtons_Click" Tag="D" Width="35" Height="30" />
