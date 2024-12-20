@@ -51,6 +51,7 @@ namespace Xbox_Linux
             { "W", "[0x11]" },
             { "X", "[0x2D]" },
             { "Y", "[0x15]" },
+            { "Z", "[0x2C]" },
             { "0", "[0x0B]" },
             { "1", "[0x02]" },
             { "2", "[0x03]" },
@@ -100,10 +101,12 @@ namespace Xbox_Linux
         {
             this.InitializeComponent();
 
-            InitializeAsync();
+            ButtonV86.Click += ButtonV86_Click;
+            ButtonHalfix.Click += ButtonHalfix_Click;
+            ButtonBasiliskII.Click += ButtonBasiliskII_Click;
         }
 
-        private async void InitializeAsync()
+        private async void InitializeAsyncV86()
         {
             await Terminal.EnsureCoreWebView2Async();
 
@@ -111,7 +114,54 @@ namespace Xbox_Linux
             Terminal.CoreWebView2.SetVirtualHostNameToFolderMapping(
                 "app.example", // The virtual host name mapped to virtual machines
                                // - leave as app.example for performance!
-                "Virtual_Machines", // v86 virtual machine resource
+                //"Virtual_Machines", // v86 virtual machine resource
+                "Virtual_Machines", // halfix virtual machine resource
+                CoreWebView2HostResourceAccessKind.Allow // Disable CORS
+            );
+
+            Terminal.CoreWebView2.Settings.IsScriptEnabled = true;
+            Terminal.CoreWebView2.Settings.IsWebMessageEnabled = true;
+            Terminal.CoreWebView2.Settings.IsNonClientRegionSupportEnabled = true;
+            Terminal.CoreWebView2.Settings.AreHostObjectsAllowed = true;
+            Terminal.CoreWebView2.Settings.IsGeneralAutofillEnabled = false;
+            Terminal.CoreWebView2.Settings.IsZoomControlEnabled = false;
+            Terminal.CoreWebView2.Settings.AreDevToolsEnabled = false;
+            Terminal.Source = new Uri("http://app.example/index.html");
+        }
+
+        private async void InitializeAsyncHalfix()
+        {
+            await Terminal.EnsureCoreWebView2Async();
+
+            // Set the mapping from a virtual host name to a folder in the package
+            Terminal.CoreWebView2.SetVirtualHostNameToFolderMapping(
+                "app.example", // The virtual host name mapped to virtual machines
+                               // - leave as app.example for performance!
+                               //"Virtual_Machines", // v86 virtual machine resource
+                "Virtual_Machines2", // halfix virtual machine resource
+                CoreWebView2HostResourceAccessKind.Allow // Disable CORS
+            );
+
+            Terminal.CoreWebView2.Settings.IsScriptEnabled = true;
+            Terminal.CoreWebView2.Settings.IsWebMessageEnabled = true;
+            Terminal.CoreWebView2.Settings.IsNonClientRegionSupportEnabled = true;
+            Terminal.CoreWebView2.Settings.AreHostObjectsAllowed = true;
+            Terminal.CoreWebView2.Settings.IsGeneralAutofillEnabled = false;
+            Terminal.CoreWebView2.Settings.IsZoomControlEnabled = false;
+            Terminal.CoreWebView2.Settings.AreDevToolsEnabled = false;
+            Terminal.Source = new Uri("http://app.example/index.html");
+        }
+
+        private async void InitializeAsyncBasiliskII()
+        {
+            await Terminal.EnsureCoreWebView2Async();
+
+            // Set the mapping from a virtual host name to a folder in the package
+            Terminal.CoreWebView2.SetVirtualHostNameToFolderMapping(
+                "app.example", // The virtual host name mapped to virtual machines
+                               // - leave as app.example for performance!
+                               //"Virtual_Machines", // v86 virtual machine resource
+                "Virtual_Machines3", // halfix virtual machine resource
                 CoreWebView2HostResourceAccessKind.Allow // Disable CORS
             );
 
@@ -214,6 +264,45 @@ namespace Xbox_Linux
             {
                 VirtualKeyboard5.Visibility = Visibility.Visible;
             }
+        }
+
+        private void ButtonV86_Click(object sender, RoutedEventArgs e)
+        {
+            VirtualKeyboard1.Visibility = Visibility.Visible;
+            VirtualKeyboard2.Visibility = Visibility.Visible;
+            VirtualKeyboard3.Visibility = Visibility.Visible;
+            VirtualKeyboard4.Visibility = Visibility.Visible;
+            VirtualKeyboard5.Visibility = Visibility.Visible;
+            ButtonV86.Visibility = Visibility.Collapsed;
+            ButtonHalfix.Visibility = Visibility.Collapsed;
+            ButtonBasiliskII.Visibility = Visibility.Collapsed;
+            InitializeAsyncV86();
+        }
+
+        private void ButtonHalfix_Click(object sender, RoutedEventArgs e)
+        {
+            VirtualKeyboard1.Visibility = Visibility.Collapsed;
+            VirtualKeyboard2.Visibility = Visibility.Collapsed;
+            VirtualKeyboard3.Visibility = Visibility.Collapsed;
+            VirtualKeyboard4.Visibility = Visibility.Collapsed;
+            VirtualKeyboard5.Visibility = Visibility.Collapsed;
+            ButtonV86.Visibility = Visibility.Collapsed;
+            ButtonHalfix.Visibility = Visibility.Collapsed;
+            ButtonBasiliskII.Visibility = Visibility.Collapsed;
+            InitializeAsyncHalfix();
+        }
+
+        private void ButtonBasiliskII_Click(object sender, RoutedEventArgs e)
+        {
+            VirtualKeyboard1.Visibility = Visibility.Collapsed;
+            VirtualKeyboard2.Visibility = Visibility.Collapsed;
+            VirtualKeyboard3.Visibility = Visibility.Collapsed;
+            VirtualKeyboard4.Visibility = Visibility.Collapsed;
+            VirtualKeyboard5.Visibility = Visibility.Collapsed;
+            ButtonV86.Visibility = Visibility.Collapsed;
+            ButtonHalfix.Visibility = Visibility.Collapsed;
+            ButtonBasiliskII.Visibility = Visibility.Collapsed;
+            InitializeAsyncBasiliskII();
         }
     }
 }

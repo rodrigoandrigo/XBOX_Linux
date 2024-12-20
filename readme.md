@@ -7,15 +7,27 @@ v86
 [UWP]
 
 Xbox-Linux
-Uses the v86 emulator as a base to run operating systems
+Emulators:
 
-The K1, K2, K3, K4 and K5 buttons only change the visibility of parts of the virtual keyboard.
+- V86
+- Halfix
+- BasiliskII
+
+The K1, K2, K3, K4 and K5 buttons only change the visibility of parts of the virtual keyboard and it only works on v86.
 
 Builds: https://drive.google.com/drive/folders/1n9jw151wiW8l8GhVlZkrxvNmP2NsF8KU?usp=sharing
 
 <img align="center" src="Img1.png">
 
+<img align="center" src="Img3.png">
+
 <img align="center" src="Img2.png">
+
+<img align="center" src="Img5.png">
+
+<img align="center" src="Img4.png">
+
+## old build with only v86
 
 [![YouTube](https://img.youtube.com/vi/wvQiqM_fJ_A/0.jpg)](https://www.youtube.com/watch?v=wvQiqM_fJ_A)
 

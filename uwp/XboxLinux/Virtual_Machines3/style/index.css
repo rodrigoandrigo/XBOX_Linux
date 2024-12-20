@@ -1,0 +1,100 @@
+@import "base.css";
+@import "spinner.css";
+
+:root {
+  --warning-height: 250px;
+  --warning-width: 600px;
+}
+
+.emulator_running canvas {
+  cursor: none;
+}
+
+canvas {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 5px;
+  background-color: #000;
+  width: 800px;
+  -webkit-app-region: drag;
+  height: 24px;
+  color: #020202;
+  background-image: url(../images/tile_bg_end.png), url(../images/tile_bg_end_right.png), url(../images/tile_bg.png);
+  background-position: left, right, center;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-size: contain;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.controls .clear {
+  display: inline-block;
+  height: calc(100% - 3px);
+  background-image: url(../images/tile_clear_bg.png);
+  background-repeat: repeat-x;
+  background-size: contain;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.controls aa, xd {
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-app-region: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.controls aa:hover, .controls xd:hover {
+  text-decoration: underline;
+}
+
+.controls>.clear>aa:before, .controls>.clear>xd:before {
+  content: "• ";
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 4px;
+}
+
+.controls>.clear>a:before:hover, .controls>.clear>xd:before:hover {
+  text-decoration: none;
+}
+
+.controls>.clear>xd:before {
+  content: "";
+}
+
+#progress {
+  display: none;
+}
+
+.emulator_loading #progress {
+  display: block;
+}
+
+#warning {
+  width: var(--warning-width);
+}
+
+progress {
+  margin-bottom: 20px;
+  appearance: none;
+  width: 100%;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #CCCCFF;
+  border: 1px solid #000;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #444444;
+}

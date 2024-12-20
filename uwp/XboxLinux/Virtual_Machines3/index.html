@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>macintosh.js.html</title>
+  <link rel="stylesheet" type="text/css" href="style/index.css">
+  <style>
+    body {
+      font-family: arial;
+      margin: 0px;
+      padding: 0px;
+      background: linear-gradient(90deg, rgb(67 134 134) 35%, rgb(20 111 130) 100%);
+    }
+
+    .emscripten {
+      padding-right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
+    }
+
+    div.emscripten {
+      text-align: center;
+    }
+
+    div.emscripten_border {
+      border: 1px solid black;
+    }
+
+    /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+    canvas.emscripten {
+      border: 0px none;
+      background-color: white;
+      cursor: none;
+    }
+
+    .fullscreen {
+      width: 100%;
+      height: 100%;
+    }
+
+    #load_screen {
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, rgb(67 134 134) 35%, rgb(20 111 130) 100%);
+      transition: all 0.5s;
+      box-sizing: content-box;
+    }
+
+    #load_screen .ring {
+      height: 45px;
+      width: 45px;
+      border: 5px solid #ddd;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: content-box;
+    }
+
+    #load_screen .ring:after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      border: 5px solid #ff3d00;
+      border-top-color: transparent;
+      animation: rotate 1.5s linear infinite;
+      box-sizing: content-box;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .intro,
+    .footer {
+      width: 800px;
+      margin: 1em auto;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .note {
+      padding: 12px;
+      background-color: #eee;
+    }
+  </style>
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+</head>
+
+<body class="loading">
+  <div id="load_screen">
+    <div class="ring"></div>
+  </div>
+  <canvas width="800" height="600" class="emscripten" id="canvas"></canvas>
+  <div id="warning" class="dialog absolute_center" style="display: none;">
+    <div>
+      <h1><img src="images/important_note.png" draggable="false"> Don't lose your data!</h1>
+      <p>
+        Warning: <strong>All changes to your virtual Macintosh will be lost</strong>
+        unless you shut down the virtual machine.
+      </p>
+      <p>
+        Click on the <img width="17" src="images/finder_icon.png" draggable="false"> icon
+        in the upper right and select "Finder". Then, in the menu bar at the
+        top of the screen, click on "Special" and select "Shut Down".
+      </p>
+
+      <button id="warning-quit" onclick="location.href='index.html'">
+        Quit anyway
+      </button>
+
+      <button id="warning-cancel" onclick="warning.style.display='none'">
+        Cancel
+      </button>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const warning = document.getElementById('warning');
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    window.basiliskConfig = {
+      singleThreadedEmscripten: true,
+      baseURL: 'mainthread/',
+      autoloadFiles: ['disk','rom', 'prefs'],
+      arguments: ['--config', 'prefs'],
+    };
+  </script>
+  <script src="mainthread/BasiliskII-mainthread-boot.js"></script>
+  <script src="mainthread/BasiliskII.js"></script>
+
+  <div class="footer">
+    <div class="note">
+      BasiliskII.js from https://github.com/Pixelsuft/macintosh.js.html
+    </div>
+  </div>
+</body>
+
+</html>
