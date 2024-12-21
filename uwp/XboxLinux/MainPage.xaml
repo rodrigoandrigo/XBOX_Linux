@@ -137,8 +137,10 @@
                 </StackPanel>
             </StackPanel>
         </RelativePanel>
-        <Button Content="V86" x:Name="ButtonV86" Margin="0,510,0,0" Height="490" Width="718" Click="ButtonV86_Click" VerticalAlignment="Top"/>
-        <Button Content="Halfix" x:Name="ButtonHalfix" Margin="0,10,0,0" VerticalAlignment="Top" Height="462" Width="1499" Click="ButtonHalfix_Click" HorizontalAlignment="Center"/>
-        <Button Content="BasiliskII" x:Name="ButtonBasiliskII" Margin="783,510,0,0" VerticalAlignment="Top" Height="490" Width="707" Click="ButtonBasiliskII_Click"/>
+        <RelativePanel>
+            <Button Content="V86" x:Name="ButtonV86" Background="IndianRed" HorizontalAlignment="Left" Width="300" Height="500" Click="ButtonV86_Click" BorderBrush="red"/>
+            <Button Content="Halfix" x:Name="ButtonHalfix" Background="GreenYellow" RelativePanel.RightOf="ButtonV86" Width="300" Height="500" Click="ButtonHalfix_Click" BorderBrush="green" Margin="10,0,0,0"/>
+            <Button Content="BasiliskII" x:Name="ButtonBasiliskII" Background="SteelBlue"  RelativePanel.RightOf="ButtonHalfix" Width="300" Height="500" Click="ButtonBasiliskII_Click" BorderBrush="blue" Margin="10,0,0,0"/>
+        </RelativePanel>
     </Grid>
 </Page>
